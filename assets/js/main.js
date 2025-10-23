@@ -9,14 +9,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.getElementById('mainNav');
     const scrollTopBtn = document.getElementById('scrollTop');
     const navLinks = document.querySelectorAll('.nav-link');
+    const logoImg = document.querySelector('.navbar-brand .logo-img');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
             scrollTopBtn.classList.add('show');
+            if (logoImg) {
+                logoImg.src = 'assets/images/logo-gold.png';
+            }
         } else {
             navbar.classList.remove('scrolled');
             scrollTopBtn.classList.remove('show');
+            if (logoImg) {
+                logoImg.src = 'assets/images/logo-gradient.png';
+            }
         }
 
         let current = '';
