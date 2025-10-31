@@ -58,27 +58,32 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+
 .navbar {
-    background: transparent;
-    backdrop-filter: blur(10px);
-    padding: 1.5rem 0;
+    background: transparent; 
+    backdrop-filter: blur(12px); 
+    border-radius: 50px; 
+    margin: 1rem auto; 
+    width: 90%;
+    max-width: 1100px;
+    padding: 0.4rem 1.5rem;
     transition: all 0.3s ease;
-    box-shadow: none;
+    
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 0.75rem 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand .logo-img {
-    height: 50px;
+    height: 120px;
     transition: all 0.3s ease;
 }
 
 .navbar.scrolled .navbar-brand .logo-img {
-    height: 40px;
+    height:80px;
 }
 
 .navbar-nav .nav-link {
@@ -134,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-nav .btn-contact:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(254, 200, 24, 0.3);
 }
 
 .hero-section {
@@ -159,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 10, 0.5) 100%);
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
     z-index: 2;
 }
 
@@ -183,10 +188,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+   
 }
 
 @media (max-width: 768px) {
@@ -210,9 +212,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-buttons .btn-primary {
-    background: var(--gradient-gold);
-    border: none;
-    color: var(--bg-dark);
+    background: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--text-light);
 }
 
 .hero-buttons .btn-primary:hover {
@@ -221,14 +223,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-buttons .btn-outline-light {
+    background: transparent;
     border: 2px solid var(--primary-gold);
-    color: var(--primary-gold);
+    color: var(--text-light);
 }
 
 .hero-buttons .btn-outline-light:hover {
-    background: var(--primary-gold);
-    color: var(--bg-dark);
-    transform: translateY(-3px);
+   transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
 }
 
 .hero-badge {
@@ -244,9 +246,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-since {
-    margin-top: 1.5rem;
+    margin-top: 5rem;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(187, 187, 187);
     font-weight: 400;
     letter-spacing: 2px;
 }
@@ -296,6 +298,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .value-card {
     background: white;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
     padding: 2.5rem;
     border-radius: 15px;
     height: 100%;
@@ -679,34 +683,58 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 991px) {    
+
+    .hero-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-buttons .btn {
+    flex: 1 1 auto;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    white-space: nowrap;
+  }
+
+  .stat-card {
+    margin-top: 2rem;
+  }
+
     .navbar-nav {
-        padding: 1rem 0;
-        background: rgba(10, 10, 10, 0.95);
-        border-radius: 10px;
+        padding: 5rem;
+        background: rgba(29, 29, 29, 0.1);
+        backdrop-filter: blur(10px);
         margin-top: 1rem;
     }
     
     .navbar.scrolled .navbar-nav {
-        background: rgba(255, 255, 255, 0.95);
+        padding: 8rem;
+        background: transparent;
+        backdrop-filter: blur(10px);
+        margin-top: 1rem;
     }
     
     .navbar-nav .nav-link {
         padding: 0.75rem 1rem !important;
+        margin-bottom: 1rem;
         text-align: center;
-    }
+        background: var(--gradient-gold);
+        color: var(--bg-dark) !important;
+        border-radius: 25px;
+        padding: 0.5rem 1.5rem !important;
+        }
     
     .navbar-nav .btn-contact {
-        margin-left: 0;
-        margin-top: 0.5rem;
-        display: inline-block;
+        display: block;
+        margin: 1rem auto 0 auto; /* centrado horizontal */
         width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
     }
     
     .navbar-toggler {
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        padding: 0.5rem 0.75rem;
+        padding: 0.2rem 0.5rem;
     }
     
     .navbar.scrolled .navbar-toggler {
@@ -725,3 +753,4 @@ h1, h2, h3, h4, h5, h6 {
 [data-aos] {
     pointer-events: auto;
 }
+

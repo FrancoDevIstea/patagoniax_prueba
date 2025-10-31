@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.add('scrolled');
             scrollTopBtn.classList.add('show');
             if (logoImg) {
-                logoImg.src = 'assets/images/logo-gold.png';
+                logoImg.src = 'assets/images/logo-silver.png';
             }
         } else {
             navbar.classList.remove('scrolled');
