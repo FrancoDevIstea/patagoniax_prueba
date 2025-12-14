@@ -1,0 +1,394 @@
+:root {
+    --primary-gold: #D4AF37;
+    --primary-dark: #B8941F;
+    --secondary-gold: #F0E68C;
+    --bg-dark: #0a0a0a;
+    --bg-darker: #050505;
+    --bg-light: #f8f9fa;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-gray: #6c757d;
+    --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F0E68C 100%);
+    --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Previene scroll lateral por la animación del menú */
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 700;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- NAVBAR ESTILO DESKTOP (Base) --- */
+.navbar {
+    background: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    margin: 1rem auto;
+    width: 90%;
+    max-width: 1100px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 0.4rem 1.5rem;
+    border-color: rgba(212, 175, 55, 0.1);
+}
+
+.navbar-brand .logo-img {
+    height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+/* Nav Links Desktop */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-gold) !important;
+}
+
+/* Subrayado animado solo en Desktop */
+@media (min-width: 992px) {
+    .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--gradient-gold);
+        transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 20px;
+    }
+}
+
+/* Botón Contacto Global */
+.navbar-nav .btn-contact {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background: var(--bg-darker);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particles-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding-top: 80px;
+}
+
+.hero-subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: block;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.hero-buttons .btn {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.8rem 2.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.hero-buttons .btn-primary {
+    background: transparent;
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.hero-buttons .btn-primary:hover {
+    background: var(--primary-gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+}
+
+.hero-buttons .btn-outline-light {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+.hero-buttons .btn-outline-light:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+}
+
+/* --- ESTILOS GENERALES CARDS (Mantenidos) --- */
+.hero-badge { display: inline-block; margin-top: 2rem; padding: 0.5rem 1.5rem; background: rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 20px; color: var(--primary-gold); font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; }
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+@media (max-width: 576px) { .stats-grid { grid-template-columns: 1fr; } }
+.stat-card, .value-card, .service-card, .project-card { background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; }
+.stat-card { padding: 2rem; text-align: center; }
+.value-card { padding: 2.5rem; margin-top: 5rem; height: 100%; }
+.service-card { padding: 2.5rem; height: 100%; border-top: 3px solid transparent; }
+.project-card { padding: 2.5rem; height: 100%; position: relative; overflow: hidden; }
+.stat-card:hover, .value-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.service-card:hover { transform: translateY(-10px); border-top-color: var(--primary-gold); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); }
+.stat-card i { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 1rem; }
+.stat-card h3 { font-size: 2rem; margin-bottom: 0.5rem; }
+.value-icon { width: 70px; height: 70px; background: var(--gradient-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.value-icon i { font-size: 2rem; color: var(--bg-dark); }
+.service-icon { width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.service-icon i { font-size: 1.8rem; color: var(--primary-gold); }
+
+/* =========================================
+   MOBILE MENU PREMIUM (ESTILO PANTALLA COMPLETA LATERAL)
+   ========================================= */
+@media (max-width: 991px) {
+    
+    /* 1. Ocultar la "barra" del navbar y el logo */
+    .navbar, .navbar.scrolled {
+        background: transparent !important; /* Hacemos la barra invisible */
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100%;
+        pointer-events: none; /* Evita que la barra invisible bloquee clicks */
+    }
+
+    .navbar-brand {
+        display: none; /* Ocultamos el logo como pediste */
+    }
+
+    /* 2. Botón Hamburguesa Flotante (Fixed) */
+    .navbar-toggler {
+        position: fixed; /* Lo fijamos a la pantalla */
+        top: 25px;
+        right: 25px;
+        z-index: 1050; /* Debe estar por encima de todo, incluso del menú abierto */
+        border: none;
+        background: rgba(0,0,0,0.2); /* Un fondo muy sutil para que resalte apenas */
+        backdrop-filter: blur(5px);
+        padding: 8px;
+        border-radius: 12px;
+        pointer-events: auto; /* Reactivamos clicks para el botón */
+        transition: all 0.3s ease;
+    }
+    
+    /* Efecto al abrir el menú: el botón se vuelve transparente */
+    .navbar-toggler[aria-expanded="true"] {
+        background: transparent;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    /* Icono de hamburguesa blanco */
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        width: 30px;
+        height: 30px;
+    }
+
+    /* 3. El Menú Desplegable (Pantalla Completa Lateral) */
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: 0; /* Alineado a la derecha */
+        width: 100vw; /* Ancho completo de la pantalla */
+        height: 100vh; /* Alto completo de la pantalla */
+        background: rgba(5, 5, 5, 0.98); /* Fondo oscuro sólido premium */
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        z-index: 1040; /* Justo debajo del botón toggler */
+        padding: 6rem 2rem 2rem 2rem; /* Padding superior grande para librar el botón de cierre */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centrar items verticalmente */
+        align-items: center;
+        
+        /* Animación de entrada lateral */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    /* Estado abierto (Bootstrap añade la clase .show) */
+    .navbar-collapse.show {
+        transform: translateX(0); /* Se desliza hacia adentro */
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    /* 4. Estilo de los Links en Móvil */
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 1.5rem; /* Letra mucho más grande y moderna */
+        font-weight: 600;
+        padding: 1rem 0 !important;
+        margin: 0.5rem 0;
+        letter-spacing: 1px;
+    }
+    
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+         color: var(--primary-gold) !important;
+         transform: translateX(5px); /* Pequeño desplazamiento elegante */
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    /* 5. Botón de contacto destacado en móvil */
+    .navbar-nav .btn-contact {
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 1.5rem; /* Letra mucho más grande y moderna */
+        font-weight: 600;
+        padding: 1rem 0 !important;
+        margin: 0.5rem 0;
+        letter-spacing: 1px;
+    }
+    
+    /* Ajustes Hero Mobile */
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        pointer-events: auto; /* Asegurar que los botones del hero funcionen */
+    }
+    .hero-buttons .btn { width: 100%; display: block; }
+}
+
+
+
+/* Footer y utilidades extra */
+.bg-dark { background-color: var(--bg-dark) !important; }
+[data-aos] { pointer-events: auto; }

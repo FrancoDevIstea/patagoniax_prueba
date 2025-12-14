@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.add('scrolled');
             scrollTopBtn.classList.add('show');
             if (logoImg) {
-                logoImg.src = 'assets/images/logo-silver.png';
+                logoImg.src = 'images/logo_goldsinfondo.png'
             }
         } else {
             navbar.classList.remove('scrolled');
             scrollTopBtn.classList.remove('show');
             if (logoImg) {
-                logoImg.src = 'assets/images/logo-gradient.png';
+                logoImg.src = 'images/logo_goldsinfondo.png'
             }
         }
 
